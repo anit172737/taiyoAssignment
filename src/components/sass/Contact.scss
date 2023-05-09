@@ -18,6 +18,12 @@
     padding: 15px 10px;
   }
 
+  @media only screen and (max-width: 500px) {
+    gap: 30px;
+    grid-template-rows: 60px 1fr;
+    padding: 0px 10px;
+  }
+
   &__table {
     @media only screen and (max-width: 450px) {
       width: 95vw;
