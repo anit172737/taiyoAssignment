@@ -25,7 +25,7 @@ ChartJS.register(
 );
 
 const Chart = () => {
-  const { graphDataList, loader } = useSelector((state) => state?.chartsMaster);
+  const { graphDataList } = useSelector((state) => state?.chartsMaster);
   const dispatch = useDispatch();
   let cases = graphDataList?.cases;
   let deaths = graphDataList?.deaths;

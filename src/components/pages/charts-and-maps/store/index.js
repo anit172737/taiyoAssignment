@@ -57,33 +57,12 @@ export const chartsMaster = createSlice({
     countryDataList: [],
     graphDataList: [],
     loader: true,
-    params: {
-      pageNo: 1,
-      pageSize: 10,
-      search: "",
-    },
     totalPages: 0,
     selected: null,
   },
   reducers: {
-    selectDesignation: (state, action) => {
-      if (action.payload === null) {
-        state.selected = null;
-      } else {
-        state.selected = action.payload;
-      }
-    },
     setLoader: (state, action) => {
       state.loader = action.payload;
-    },
-    setPageNo: (state, action) => {
-      state.params = { ...state.params, pageNo: action.payload };
-    },
-    setPageSize: (state, action) => {
-      state.params = { ...state.params, pageSize: action.payload };
-    },
-    setSearch: (state, action) => {
-      state.params = { ...state.params, search: action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -100,12 +79,6 @@ export const chartsMaster = createSlice({
   },
 });
 
-export const {
-  selectDesignation,
-  setLoader,
-  setPageNo,
-  setPageSize,
-  setSearch,
-} = chartsMaster.actions;
+export const { setLoader } = chartsMaster.actions;
 
 export default chartsMaster.reducer;

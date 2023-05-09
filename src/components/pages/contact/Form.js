@@ -4,20 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import "../../sass/AddForm.scss";
 
-import {
-  Button,
-  Col,
-  Form,
-  FormFeedback,
-  Input,
-  Label,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  Row,
-  Spinner,
-} from "reactstrap";
-// import '@styles/react/libs/flatpickr/flatpickr.scss'
+import { Button, Col, Form, FormFeedback, Input, Label, Row } from "reactstrap";
 import { addContact, editContact, selectContact, setLoader } from "./store";
 
 const defaultValues = {
@@ -26,7 +13,7 @@ const defaultValues = {
   status: "",
 };
 const AddForm = ({ setShow }) => {
-  const { loader, selected, contactList } = useSelector(
+  const { selected, contactList } = useSelector(
     (state) => state?.contactMaster
   );
   const dispatch = useDispatch();
@@ -126,7 +113,9 @@ const AddForm = ({ setShow }) => {
                 )}
               />
               {errors && errors.firstName && (
-                <FormFeedback>{errors.firstName.message}</FormFeedback>
+                <FormFeedback style={{ color: "orangered" }}>
+                  {errors.firstName.message}
+                </FormFeedback>
               )}
             </div>
 
@@ -155,7 +144,9 @@ const AddForm = ({ setShow }) => {
                 )}
               />
               {errors && errors.lastName && (
-                <FormFeedback>{errors.lastName.message}</FormFeedback>
+                <FormFeedback style={{ color: "orangered" }}>
+                  {errors.lastName.message}
+                </FormFeedback>
               )}
             </div>
             <div className="addModal__content--input">

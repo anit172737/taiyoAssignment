@@ -6,14 +6,13 @@ import { Button } from "reactstrap";
 import "../../sass/Contact.scss";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact, deleteContact, selectContact } from "./store";
+import { deleteContact, selectContact } from "./store";
 import AddForm from "./Form";
-import { set } from "react-hook-form";
 import DeleteForm from "./deleteForm";
 import toast from "react-hot-toast";
 
 const Contact = () => {
-  const { contactList, loader } = useSelector((state) => state.contactMaster);
+  const { contactList } = useSelector((state) => state.contactMaster);
   const [show, setShow] = useState(false);
   const [deleteData, setDeleteData] = useState();
   const [deleteModal, setDeleteModal] = useState(false);
@@ -27,7 +26,7 @@ const Contact = () => {
   };
 
   const handleDelete = async () => {
-    const arr = await contactList.filter((e) => e.id != deleteData.id);
+    const arr = await contactList.filter((e) => e.id !== deleteData.id);
     dispatch(deleteContact(arr));
 
     toast.success("Contact Deleted Successfully");

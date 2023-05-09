@@ -1,6 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from 'axios'
-import toast from "react-hot-toast";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const contactMaster = createSlice({
   name: "contactMaster",
@@ -39,9 +37,6 @@ export const contactMaster = createSlice({
     deleteContact: (state, action) => {
       state.contactList = action.payload;
     },
-    setSearch: (state, action) => {
-      state.params = { ...state.params, search: action.payload };
-    },
   },
 });
 
@@ -51,9 +46,6 @@ export const {
   editContact,
   deleteContact,
   setLoader,
-  setPageNo,
-  setPageSize,
-  setSearch,
 } = contactMaster.actions;
 
 export default contactMaster.reducer;

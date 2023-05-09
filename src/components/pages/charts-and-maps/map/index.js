@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "../../../sass/Chart.scss";
 import { fetchCountryDataList } from "../store";
@@ -8,9 +8,7 @@ import L from "leaflet";
 import icon from "../../../../assets/images/placeholder.png";
 
 const Map = () => {
-  const { countryDataList, loader } = useSelector(
-    (state) => state?.chartsMaster
-  );
+  const { countryDataList } = useSelector((state) => state?.chartsMaster);
   const dispatch = useDispatch();
 
   const myIcon = L.icon({
