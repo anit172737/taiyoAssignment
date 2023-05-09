@@ -1,0 +1,81 @@
+@import "./base";
+
+.addModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: #6b63ff3b;
+  width: 100%;
+  height: 100%;
+  padding: 3vw;
+
+  &__content {
+    height: min-content;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    justify-items: center;
+    padding: 0px 40px 30px;
+    z-index: 10000;
+
+    &--padding {
+      padding-top: 20px !important;
+      width: 400px !important;
+    }
+
+    &--header {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+    }
+
+    &--body {
+      display: grid;
+      gap: 20px;
+    }
+
+    &--input {
+      display: grid;
+
+      &-1 {
+        height: 50px;
+        width: 100%;
+        border: 1px solid $color-primary-dark;
+        padding: 0px 10px;
+        border-radius: 10px;
+        font-family: myFont;
+        font-size: 20px;
+      }
+    }
+
+    &--footer {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 30px;
+
+      &-btn {
+        height: 40px;
+        width: 100px;
+        background-color: $color-primary;
+        color: white;
+        border-radius: 10px !important;
+        border: none;
+        cursor: pointer;
+        font-family: myFont;
+        font-size: 18px;
+
+        &-close {
+          background-color: white;
+          border: 2px solid $color-primary;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

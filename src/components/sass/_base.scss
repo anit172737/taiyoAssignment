@@ -1,0 +1,30 @@
+$color-primary: #6c63ff;
+$color-primary-dark: #2f2e47;
+$color-primary-light: #f7f7ff;
+$color-primary-light-1: #ebebff;
+$color-secondary: #ec0063;
+$color-ternory: #e8165d;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url(../../assets/font/NTR-Regular.ttf);
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 500;
+  font-family: myFont;
+  font-size: 2.5rem;
+  color: $color-primary;
+}

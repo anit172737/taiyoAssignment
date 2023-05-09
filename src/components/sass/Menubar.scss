@@ -1,0 +1,35 @@
+@import "./base";
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+.menubar {
+  display: grid;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 180px;
+  padding: 10px;
+  box-shadow: 0 8px 25px -8px #82868b;
+  background-color: white;
+  color: $color-primary-dark;
+  justify-content: center;
+  z-index: 1000;
+
+  &__nav {
+    text-decoration: none;
+    cursor: pointer;
+
+    &--active {
+      cursor: pointer;
+      text-decoration: none;
+      color: rgb(134, 206, 27);
+    }
+  }
+}
